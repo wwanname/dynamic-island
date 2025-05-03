@@ -6,6 +6,7 @@ import Before from './Before'
 import { useState } from 'react'
 import { MotionConfig } from 'motion/react'
 import { closeSpring, openSpring } from '../../utils/animation'
+// I don't know where the bug comes from, it appears when I delete messy CSS files
 
 export default function AppStore() {
     const [click, setClick] = useState({ active: false, number: 0 });
