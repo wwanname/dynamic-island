@@ -1,0 +1,61 @@
+.rin
+    height: 28px
+    display: flex
+    position: relative
+    align-items: center
+    padding-left: .625rem
+    padding-right: .625rem
+    justify-content: space-between
+    .background
+        left: 5px
+        width: 3rem
+        height: 18px
+        cursor: pointer
+        position: absolute
+        border-radius: 9999px
+        background: #FD4F30
+    button
+        width: 11.25px
+        height: 12.75px
+        cursor: pointer
+        position: relative
+        svg
+            inset: 0
+            position: absolute
+        .stroke
+            inset: 0
+            height: 20px
+            rotate: -40deg
+            overflow: hidden
+            position: absolute
+            translate: 5.25px -5px
+            .height
+                height: 16px
+                .red
+                    width: 3px
+                    height: 100%
+                    display: flex
+                    align-items: center
+                    border-radius: 9999px
+                    justify-content: center
+                    background-color: #FD4F30
+                    .white
+                        height: 100%
+                        width: 0.75px
+                        border-radius: 9999px
+                        background-color: white
+    .info
+        width: 32px
+        display: flex
+        position: relative
+        align-items: center
+        span
+            font-weight: 500
+            font-size: 0.75rem
+            line-height: 1.4444
+            &:nth-of-type(1)
+                color: #FD4F30
+                position: absolute
+            &:nth-of-type(2)
+                color: white
+                margin-left: auto

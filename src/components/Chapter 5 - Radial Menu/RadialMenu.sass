@@ -1,0 +1,124 @@
+span, p
+  user-select: none
+  -webkit-user-select: none
+
+section
+    width: 100%
+    height: 100dvh
+    position: relative
+    background-color: #1c1c1c
+    p
+        top: 50%
+        left: 50%
+        translate: -50% 50%
+        position: absolute
+        text-align: center
+        width: fit-content
+        height: fit-content
+        pointer-events: none
+        color: hsl(0 0% 62.8%)
+    .container
+        z-index: 10
+        cursor: move
+        width: 250px
+        height: 250px
+        position: fixed
+        touch-action: none
+        pointer-events: auto
+        border-radius: 9999px
+        border: 1px solid hsl(0 0% 17.9%)
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12)
+        .detect
+            z-index: -1
+            inset: -12px
+            position: absolute
+            border-radius: 9999px
+            width: calc(100% + 24px)
+            height: calc(100% + 24px)
+            border: 8px solid hsl(0 0% 13.6%)
+            &::after
+                z-index: 1
+                content: ""
+                inset: -8px
+                padding: 8px
+                position: absolute
+                pointer-events: none
+                border-radius: inherit
+                transition: background 150ms ease-in-out
+                background: conic-gradient(from var(--a, 0deg), transparent 83.4%, hsl(0 0% 43.9%) 0, hsl(0 0% 43.9%) 100%)
+        .display
+            top: 50%
+            left: 50%
+            z-index: 3
+            width: 125px
+            height: 125px
+            display: flex
+            cursor: default
+            position: absolute
+            align-items: center
+            border-radius: 9999px
+            justify-content: center
+            background: hsl(0 0% 11.0%)
+            transform: translate(-50%, -50%)
+            border: 1px solid hsl(0 0% 17.9%)
+            &::after
+                content: ""
+                width: calc(100% - 8px)
+                height: calc(100% - 8px)
+                position: absolute
+                border-radius: inherit
+                border: 1px solid hsl(0 0% 17.9%)
+            span
+                font-size: 13px
+                font-weight: 400
+                line-height: 28px
+                color: hsl(0 0% 62.8%)
+        .items
+            width: 100%
+            height: 100%
+            overflow: hidden
+            position: relative
+            border-radius: inherit
+            box-shadow: 0 0 0 4px hsl(0 0% 11.0%)
+            li
+                width: 240px
+                height: 240px
+                background: hsl(0 0% 13.6%)
+                position: absolute
+                bottom: 50%
+                right: 50%
+                transition: all 250ms
+                transform-origin: 100% 100%
+                box-shadow: 0 0 0 1px hsl(0 0% 17.9%)
+                color: hsl(0 0% 62.8%)
+                font-size: 24px
+                --a: 30deg
+                &:nth-of-type(1)
+                    transform: rotate(calc(var(--a)* -1)) skew(var(--a))
+                    svg
+                        transform: skew(calc(var(--a)* -1)) rotate(var(--a)) translateX(331px) translateY(16px)
+                &:nth-of-type(2)
+                    transform: rotate(var(--a)) skew(var(--a))
+                    svg
+                        transform: skew(calc(var(--a) * -1)) rotate(var(--a)) translateX(340px) translateY(16px) rotate(-90deg)
+                &:nth-of-type(3)
+                    transform: rotate(calc(var(--a)* 3)) skew(var(--a))
+                    svg
+                        transform: skew(calc(var(--a)* -1)) rotate(var(--a)) translateX(334px) translateY(20px) rotate(-120deg)
+                &:nth-of-type(4)
+                    transform: rotate(calc(var(--a)* 5)) skew(var(--a))
+                    svg
+                        transform: skew(calc(var(--a)* -1)) rotate(var(--a)) translateX(334px) translateY(20px)
+                &:nth-of-type(5)
+                    transform: rotate(calc(var(--a)* 7)) skew(var(--a))
+                    svg
+                        transform: skew(calc(var(--a)* -1)) rotate(var(--a)) translateX(334px) translateY(16px) rotate(120deg)
+                &:nth-of-type(6)
+                    transform: rotate(calc(var(--a)* 9)) skew(var(--a))
+                    svg
+                        transform: skew(calc(var(--a)* -1)) rotate(var(--a)) translateX(334px) translateY(16px) rotate(60deg)
+                svg
+                    transition: all 250ms
+            li[data-active='true']
+                color: hsl(0 0% 93.0%)
+                background: hsl(0 0% 17.9%)
